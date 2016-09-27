@@ -13,8 +13,10 @@ namespace AbstractFactory
             var warrior = Introduction.NewWarrior();
             Introduction.ChooseWeapon(warrior);
 
-            var bear = new ConcreteEnemyBear();
-            warrior.TakeHit(bear);
+            while (warrior.HitPoints > 0) {
+                var destination = Travel.ChooseDestination();
+                destination.Visit(warrior);
+            }
         }
     }
 }
