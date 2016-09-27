@@ -7,8 +7,11 @@ namespace AbstractFactory
 {
     public class ConcreteEnemyLion : AbstractEnemy
     {
+
+
         public ConcreteEnemyLion()
         {
+            HitPoints = 15;
         }
 
         public override int Damage
@@ -19,13 +22,7 @@ namespace AbstractFactory
             }
         }
 
-        public override int HitPoints
-        {
-            get
-            {
-                return 15;
-            }
-        }
+        public override int HitPoints { get; set; }
 
         public override string Name
         {

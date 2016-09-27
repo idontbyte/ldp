@@ -9,6 +9,7 @@ namespace AbstractFactory
     {
         public ConcreteEnemyBear()
         {
+            HitPoints = 20;
         }
 
         public override int Damage
@@ -19,13 +20,8 @@ namespace AbstractFactory
             }
         }
 
-        public override int HitPoints
-        {
-            get
-            {
-                return 20;
-            }
-        }
+        public override int HitPoints{ get; set; }
+        
 
         public override string Name
         {
