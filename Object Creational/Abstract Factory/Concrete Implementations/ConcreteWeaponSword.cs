@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
 namespace AbstractFactory
 {
-    public class ConcreteWeaponAxe : AbstractWeapon
+    public class ConcreteWeaponSword : AbstractWeapon
     {
-        public ConcreteWeaponAxe()
+        public ConcreteWeaponSword()
         {
         }
 
@@ -15,7 +10,7 @@ namespace AbstractFactory
         {
             get
             {
-                return 6;
+                return 4;
             }
         }
 
@@ -23,7 +18,7 @@ namespace AbstractFactory
         {
             get
             {
-                return "Axe";
+                return "Sword";
             }
         }
 
@@ -31,7 +26,7 @@ namespace AbstractFactory
         {
             get
             {
-                return 0.5;
+                return 0.9;
             }
         }
     }

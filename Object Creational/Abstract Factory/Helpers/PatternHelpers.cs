@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+
 namespace AbstractFactory
 {
-    public static class Helpers
+    public static class PatternHelpers
     {
         public static IEnumerable<T> GetEnumerableOfType<T>(params object[] constructorArgs) where T : class
         {
