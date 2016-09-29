@@ -15,14 +15,20 @@ namespace AbstractFactory
         {
             _warrior = warrior;
             Console.WriteLine("Dense woodlands lay before you, this could be a good place to hunt.");
+            GameHelper.Pause();
+
             Console.WriteLine("Would you like to 'Hunt' or 'Travel'?");
+            
             var destinationInput = string.Empty;
             destinationInput = Console.ReadLine();
+            
             while (new [] { "Hunt", "Travel" }.All(v => v != destinationInput)) {
                 Console.WriteLine(string.Concat(destinationInput, " is not an option, please choose 'Hunt' or 'Travel'"));
                 destinationInput = Console.ReadLine();
             }
+            
             Console.WriteLine(string.Concat("You chose: ",destinationInput));
+            GameHelper.Pause();
             if (destinationInput == "Hunt") {
                 Hunt();
             }
@@ -36,10 +42,14 @@ namespace AbstractFactory
             // pick random enemy
             var enemy = enemies.ToList()[rand.Next(enemies.Count())];
 
-            //Console.WriteLine(
-            //    string.Concat("You move in to the woods, as the light of the day falls away behind you hear a low growl, as you turn towards it you catch the predatory gaze of a ", 
-            //        _enemy.Name, 
-            //        " who is approaching you at great speed."));
+            Console.WriteLine(
+                string.Concat("You move in to the woods, as the light of the day falls away behind you hear a low growl, as you turn towards it you catch the predatory gaze of a ", 
+                    enemy.Name, 
+                    " who is approaching you at great speed."));
+
+            GameHelper.Pause();
+
+            var combat = new Combat(_warrior, enemy);
         }
     }
 }

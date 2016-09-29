@@ -7,7 +7,9 @@ namespace AbstractFactory
     {
         public static void Welcome() {
             Console.WriteLine("Welcome to the abstract factory demo.");
+            GameHelper.Pause();
             Console.WriteLine("For the purposes of this demo, imagine you are a warrior, profficient in many weapons");
+            GameHelper.Pause();
             Console.WriteLine("Let us begin.");
         }
 
@@ -22,6 +24,7 @@ namespace AbstractFactory
 
         public static void ChooseWeapon(Warrior warrior) {
             Console.WriteLine(string.Concat("Hello ", warrior.Name, ", would you care to choose a weapon?"));
+            GameHelper.Pause();
             Console.WriteLine("");
             Console.WriteLine("Choose a weapon, 'Sword', 'Axe' or 'Dagger'");
 
@@ -41,6 +44,8 @@ namespace AbstractFactory
                 throw new Exception("Type " + weaponType + " not found.");
             }
             var weapon = (AbstractWeapon)Activator.CreateInstance(t);
+            
+            GameHelper.Pause();
 
             Console.WriteLine(string.Concat("Good choice, your "
                 ,weapon.Name," has ",weapon.Damage," damage and hits ",weapon.Speed," times per second."));

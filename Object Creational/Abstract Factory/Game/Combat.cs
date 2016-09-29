@@ -21,19 +21,22 @@ namespace AbstractFactory
         private void BeginCombat() {
             // roll for initiative
             RollInitiative();
+            GameHelper.Pause();
 
             if (_warriorInitiative >= _enemyInitiative) {
-                Turn(_warrior);
+                Console.WriteLine(string.Concat("You get the drop on the ",_enemy.Name));
+                WarriorTurn();
             } else if (_enemyInitiative > _warriorInitiative) {
-                Turn(_enemy);
+                Console.WriteLine(string.Concat("The ",_enemy.Name," takes you by surprise."));
+                EnemyTurn();
             } 
         }
 
-        private void Turn(Warrior warrior) {
-            
+        private void WarriorTurn() {
+
         }
 
-        private void Turn(AbstractEnemy enemy) {
+        private void EnemyTurn() {
 
         }
 
