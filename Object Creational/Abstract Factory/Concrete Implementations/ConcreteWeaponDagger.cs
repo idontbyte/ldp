@@ -21,13 +21,5 @@ namespace AbstractFactory
                 return "Dagger";
             }
         }
-
-        public override double Speed
-        {
-            get
-            {
-                return 2;
-            }
-        }
     }
 }

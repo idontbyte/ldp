@@ -33,16 +33,28 @@ namespace AbstractFactory
         }
 
         private void WarriorTurn() {
-
+            GameHelper.Pause();
+            var roll = Dice.RollD20();
+            var result = roll + _warrior.AttackBonus + _warrior.StrengthModifier;
+            if (result > _enemy.ArmorClass) {
+                // hit
+                var damage = _warrior.Weapon.Damage + _warrior.StrengthModifier;
+                Console.WriteLine(string.Concat("You hit the ",_enemy.Name," with your ",_warrior.Weapon.Name," striking it for ",damage," damage."));
+                _enemy.HitPoints = _enemy.HitPoints - damage;
+            } else {
+                // miss
+                Console.WriteLine(string.Concat("You miss the ",_enemy.Name," spectacularly."));
+            }
         }
 
         private void EnemyTurn() {
+            GameHelper.Pause();
 
         }
 
         private void RollInitiative() {
-            var _warriorInitiative = Dice.RollD20();
-            var _enemyInitiative = Dice.RollD20();
+            _warriorInitiative = Dice.RollD20();
+            _enemyInitiative = Dice.RollD20();
         }
     }
 }

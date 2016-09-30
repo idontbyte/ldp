@@ -1,3 +1,5 @@
+using System;
+
 namespace AbstractFactory
 {
     public class ConcreteEnemyBear : AbstractEnemy
@@ -5,6 +7,14 @@ namespace AbstractFactory
         public ConcreteEnemyBear()
         {
             HitPoints = 20;
+        }
+
+        public override int ArmorClass
+        {
+            get
+            {
+                return 18;
+            }
         }
 
         public override int Damage

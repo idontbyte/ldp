@@ -21,13 +21,5 @@ namespace AbstractFactory
                 return "Axe";
             }
         }
-
-        public override double Speed
-        {
-            get
-            {
-                return 0.5;
-            }
-        }
     }
 }

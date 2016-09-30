@@ -48,7 +48,7 @@ namespace AbstractFactory
             GameHelper.Pause();
 
             Console.WriteLine(string.Concat("Good choice, your "
-                ,weapon.Name," has ",weapon.Damage," damage and hits ",weapon.Speed," times per second."));
+                ,weapon.Name," has ",weapon.Damage," damage."));
 
             warrior.Weapon = weapon;
         }

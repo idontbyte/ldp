@@ -21,13 +21,5 @@ namespace AbstractFactory
                 return "Sword";
             }
         }
-
-        public override double Speed
-        {
-            get
-            {
-                return 0.9;
-            }
-        }
     }
 }
