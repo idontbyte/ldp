@@ -11,7 +11,9 @@ namespace SRP
         {
             // lottery number generator
             var lotto = new Lotto();
-            lotto.GenerateNumbers(lotto.Getname());
+            var name = lotto.Getname();
+            var numbers =lotto.GenerateNumbers(name);
+            lotto.PrintNumbers(numbers);
         }
     }
 }
