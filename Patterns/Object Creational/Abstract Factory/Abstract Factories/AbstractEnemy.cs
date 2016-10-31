@@ -7,8 +7,8 @@ namespace AbstractFactory
         public abstract string Name { get; }
         public abstract int HitPoints { get; set; }
         public abstract int Damage { get; }
-
         public abstract int ArmorClass { get; }
+        public abstract int AttackBonus { get; }
 
         public void TakeHit(Warrior warrior) {
             HitPoints = HitPoints - warrior.Weapon.Damage;

@@ -14,10 +14,13 @@ namespace AbstractFactory
 
         public int AttackBonus { get; set; }
 
+        public int ArmorClass { get; set; }
+
         public Warrior() {
             HitPoints = 20;
             StrengthModifier = 2;
             AttackBonus = 2;
+            ArmorClass = 17;
         }
 
         public void TakeHit(AbstractEnemy enemy) {

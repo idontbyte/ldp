@@ -17,6 +17,14 @@ namespace AbstractFactory
             }
         }
 
+        public override int AttackBonus
+        {
+            get
+            {
+                return 4;
+            }
+        }
+
         public override int Damage
         {
             get

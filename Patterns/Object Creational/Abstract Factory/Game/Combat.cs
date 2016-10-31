@@ -6,7 +6,6 @@ namespace AbstractFactory
     {
         private Warrior _warrior;
         private int _warriorInitiative;
-
         private AbstractEnemy _enemy;
         private int _enemyInitiative;
 
@@ -26,9 +25,11 @@ namespace AbstractFactory
             if (_warriorInitiative >= _enemyInitiative) {
                 Console.WriteLine(string.Concat("You get the drop on the ",_enemy.Name));
                 WarriorTurn();
+                EnemyTurn();
             } else if (_enemyInitiative > _warriorInitiative) {
                 Console.WriteLine(string.Concat("The ",_enemy.Name," takes you by surprise."));
                 EnemyTurn();
+                // choose
             } 
         }
 
@@ -49,7 +50,17 @@ namespace AbstractFactory
 
         private void EnemyTurn() {
             GameHelper.Pause();
-
+            var roll = Dice.RollD20();
+            var result = roll + _enemy.AttackBonus;
+            if (result > _warrior.ArmorClass) {
+                // hit
+                var damage = _enemy.Damage;
+                Console.WriteLine(string.Concat("The ", _enemy.Name, " hits you for ", damage, " damage."));
+                _warrior.HitPoints = _warrior.HitPoints - damage;
+            } else {
+                // miss
+                Console.WriteLine(string.Concat("The ", _enemy.Name, " misses."));
+            }
         }
 
         private void RollInitiative() {
